@@ -1,0 +1,23 @@
+.form {
+  display: grid;
+  gap: .9rem;
+  max-width: 560px;
+}
+.form label {
+  display: grid;
+  gap: .35rem;
+  font-size: .95rem;
+  color: var(--muted);
+}
+input, textarea {
+  width: 100%;
+  padding: .8rem 1rem;
+  border-radius: 12px;
+  background: #0e151f;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+input:focus, textarea:focus {
+  border-color: #335784;
+}
+.success { color: #78f0b4; }

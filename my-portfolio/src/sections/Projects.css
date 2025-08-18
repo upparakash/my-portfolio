@@ -1,0 +1,21 @@
+.projects-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1rem;
+  background: #0e151f;
+  box-shadow: var(--shadow);
+}
+.chip-row { display: flex; gap: .5rem; flex-wrap: wrap; }
+.chip {
+  padding: .25rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: .85rem;
+  color: var(--muted);
+}
+.card-actions { display: flex; gap: .5rem; margin-top: .75rem; }
