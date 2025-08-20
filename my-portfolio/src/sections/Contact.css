@@ -21,3 +21,45 @@ input:focus, textarea:focus {
   border-color: #335784;
 }
 .success { color: #78f0b4; }
+.contact {
+  text-align: center;
+  padding: 2rem;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap; /* responsive for small screens */
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.contact li {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.map-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

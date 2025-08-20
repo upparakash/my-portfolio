@@ -1,9 +1,9 @@
 .footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically */
   padding: 1rem 4vw;
   border-top: 1px solid var(--border);
   background: #0c1118;
+  gap: 1rem; /* spacing between items */
 }
-.footer a { color: var(--muted); }
