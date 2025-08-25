@@ -12,7 +12,7 @@ export default function Experience() {
         </div>
         <div className="job">
           <h3>Junior Software Engineer – SEVAK DIGITAL TECHNOLOGIES</h3>
-          <span>(Feb 2023 – May 2025)</span>
+          <span>(Feb 2024 – May 2025)</span>
           <p>Built React apps, created RESTful APIs with Node.js/Express, and tested APIs using Postman.</p>
         </div>
         <div className="job">
