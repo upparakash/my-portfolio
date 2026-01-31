@@ -1,38 +1,28 @@
-.form {
-  display: grid;
-  gap: .9rem;
-  max-width: 560px;
-}
-.form label {
-  display: grid;
-  gap: .35rem;
-  font-size: .95rem;
-  color: var(--muted);
-}
-input, textarea {
-  width: 100%;
-  padding: .8rem 1rem;
-  border-radius: 12px;
-  background: #0e151f;
-  border: 1px solid var(--border);
-  color: var(--text);
-}
-input:focus, textarea:focus {
-  border-color: #335784;
-}
-.success { color: #78f0b4; }
 .contact {
   text-align: center;
   padding: 2rem;
 }
 
+.contact h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+/* Contact row */
 .contact-row {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
   margin-top: 1.5rem;
-  flex-wrap: wrap; /* responsive for small screens */
+  flex-wrap: wrap;
 }
 
 .contact ul {
@@ -43,11 +33,31 @@ input:focus, textarea:focus {
 }
 
 .contact li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   margin: 0.8rem 0;
   font-size: 1.1rem;
   color: var(--text);
 }
 
+.contact-icon {
+  color: var(--accent);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* Links */
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Map container */
 .map-container {
   flex: 1;
   min-width: 300px;
@@ -62,4 +72,38 @@ input:focus, textarea:focus {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* Form inputs (if you plan to add contact form) */
+.form {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 560px;
+  margin: 1.5rem auto 0 auto;
+}
+
+.form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: #0e151f;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+}
+
+.success {
+  color: #78f0b4;
 }

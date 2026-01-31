@@ -1,6 +1,14 @@
 import "./Contact.css";
+import { FaPhone, FaMapMarkerAlt, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
+  const contactDetails = [
+    { icon: <FaPhone className="contact-icon" />, label: "8186081185" },
+    { icon: <FaEnvelope className="contact-icon" />, label: <a href="mailto:akashuppar1998@gmail.com">akashuppar1998@gmail.com</a> },
+    { icon: <FaGithub className="contact-icon" />, label: <a href="https://github.com/upparakash" target="_blank" rel="noreferrer">GitHub Profile</a> },
+    { icon: <FaMapMarkerAlt className="contact-icon" />, label: "Hyderabad, India" },
+  ];
+
   return (
     <section className="contact">
       <h2>Contact Me</h2>
@@ -9,14 +17,11 @@ export default function Contact() {
       <div className="contact-row">
         {/* Left column - contact details */}
         <ul>
-          <li>📞 8186081185</li>
-          <li>
-            📧 <a href="mailto:akashuppar1998@gmail.com">akashuppar1998@gmail.com</a>
-          </li>
-          <li>
-            🌍 <a href="https://github.com/upparakash" target="_blank" rel="noreferrer">GitHub Profile</a>
-          </li>
-          <li>📍 Hyderabad, India</li>
+          {contactDetails.map((item, index) => (
+            <li key={index}>
+              {item.icon} {item.label}
+            </li>
+          ))}
         </ul>
 
         {/* Right column - Google Map */}

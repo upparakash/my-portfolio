@@ -1,45 +1,3 @@
-.about { margin-top: 2rem; }
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-.list { padding-left: 1rem; }
-
-
-.skills-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.skills-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.7rem;
-  font-size: 1rem;
-  color: var(--text);
-}
-
-.skills-list .icon {
-  font-size: 1.3rem;
-}
-
-/* Add colors for icons */
-.icon.react { color: #61dafb; }
-.icon.js { color: #f7df1e; }
-.icon.redux { color: #764abc; }
-.icon.node { color: #3c873a; }
-.icon.db { color: #00758f; }
-.icon.firebase { color: #ffca28; }
-.icon.graphql { color: #e535ab; }
-.icon.postman { color: #ff6c37; }
-.icon.android { color: #3ddc84; }
-.icon.github { color: #fff; }
-.icon.vscode { color: #0078d7; }
-
-
 /* Floating icons background */
 .floating-icons {
   position: absolute;
@@ -53,22 +11,23 @@
 
 .float-icon {
   position: absolute;
-  font-size: 3rem;   /* bigger for visibility */
-  opacity: 0.25;     /* was 0.1 */
+  font-size: 3rem;   
+  opacity: 0.25;     
   animation: floatAnim 25s infinite linear;
-  filter: blur(0.3px); /* soft glow effect */
+  filter: blur(0.3px);
 }
 
-/* Random positions (you can adjust) */
-.float-icon.react { top: 10%; left: 20%; color: #61dafb; animation-duration: 22s; }
-.float-icon.js { top: 30%; left: 70%; color: #f7df1e; animation-duration: 28s; }
-.float-icon.redux { top: 60%; left: 15%; color: #764abc; animation-duration: 30s; }
-.float-icon.node { top: 80%; left: 50%; color: #3c873a; animation-duration: 26s; }
-.float-icon.db { top: 40%; left: 40%; color: #00758f; animation-duration: 35s; }
-.float-icon.firebase { top: 75%; left: 80%; color: #ffca28; animation-duration: 32s; }
-.float-icon.graphql { top: 20%; left: 85%; color: #e535ab; animation-duration: 29s; }
-.float-icon.postman { top: 55%; left: 60%; color: #ff6c37; animation-duration: 27s; }
-.float-icon.github { top: 90%; left: 30%; color: #fff; animation-duration: 33s; }
+/* Random positions and animation duration */
+.float-icon.react { top: 10%; left: 20%; animation-duration: 22s; }
+.float-icon.js { top: 30%; left: 70%; animation-duration: 28s; }
+.float-icon.redux { top: 60%; left: 15%; animation-duration: 30s; }
+.float-icon.node { top: 80%; left: 50%; animation-duration: 26s; }
+.float-icon.db { top: 40%; left: 40%; animation-duration: 35s; }
+.float-icon.firebase { top: 75%; left: 80%; animation-duration: 32s; }
+.float-icon.graphql { top: 20%; left: 85%; animation-duration: 29s; }
+.float-icon.postman { top: 55%; left: 60%; animation-duration: 27s; }
+.float-icon.github { top: 90%; left: 30%; animation-duration: 33s; }
+.float-icon.aws { top: 50%; left: 10%; animation-duration: 31s; } /* AWS EC2 added */
 
 /* Floating animation */
 @keyframes floatAnim {
@@ -77,21 +36,21 @@
   100% { transform: translateY(0) rotate(360deg); }
 }
 
-.about {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;  /* keep icons inside section */
-  padding: 3rem 2rem;
+/* Skills list */
+.skills-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  color: var(--text);
 }
 
-/* Floating animation */
-@keyframes floatAnim {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-40px) rotate(180deg); }
-  100% { transform: translateY(0) rotate(360deg); }
+.skills-list .icon {
+  font-size: 1.3rem;
 }
 
-/* Add glowing colors to each icon */
+/* Icon colors and glow effect */
 .icon.react, .float-icon.react { color: #61dafb; text-shadow: 0 0 8px #61dafb; }
 .icon.js, .float-icon.js { color: #f7df1e; text-shadow: 0 0 8px #f7df1e; }
 .icon.redux, .float-icon.redux { color: #764abc; text-shadow: 0 0 8px #764abc; }
@@ -101,3 +60,4 @@
 .icon.graphql, .float-icon.graphql { color: #e535ab; text-shadow: 0 0 8px #e535ab; }
 .icon.postman, .float-icon.postman { color: #ff6c37; text-shadow: 0 0 8px #ff6c37; }
 .icon.github, .float-icon.github { color: #ffffff; text-shadow: 0 0 8px #ffffff; }
+.icon.aws, .float-icon.aws { color: #ff9900; text-shadow: 0 0 8px #ff9900; } /* AWS EC2 color */
