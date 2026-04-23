@@ -21,7 +21,7 @@ export default function Nav() {
 
         {/* Resume Download Button */}
         <a 
-          href="https://drive.google.com/file/d/1mnxC7s16mmLiQaEiOfKR-2qke3JxnELl/view?usp=sharing"
+          href="https://drive.google.com/uc?export=download&id=1hJfGy_UKNZsu0kcdQVtfVwzR2FpwvTSK"
           target="_blank"
           rel="noopener noreferrer"
           className="resume-btn"
