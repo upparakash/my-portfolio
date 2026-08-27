@@ -4,11 +4,12 @@ import { FaLaptopCode, FaUserTie, FaHeadset, FaFileAlt } from "react-icons/fa";
 export default function Experience() {
   const jobs = [
     {
-      title: "Full Stack Mobile App Developer",
+      title: "Full Stack Developer",
       company: "Aspire Tekhub Solutions",
       companyLink: "https://www.aspirebrand.store/",
-      period: "Sep 2025 – Present",
-      description: `Developed responsive UIs, collaborated with designers, ensured cross-browser compatibility, and built reusable components.`,
+      period: "Sep 2025 – Mar 2026",
+      description:
+        "Built full-stack features for web and mobile using React.js, React Native, Node.js, and Express. Implemented secure REST APIs with JWT auth, managed AWS deployment and infra (S3, EC2, RDS, CloudFront, IAM), and handled Redux/Context state management and CI/CD across staging and production.",
       extraLinks: [
         { label: "website", link: "https://www.aspirebrand.store/" },
         { label: "mobile app", link: "https://play.google.com/store/apps/details?id=com.aspirebrand&pcampaignid=web_share" },
@@ -16,10 +17,19 @@ export default function Experience() {
       icon: <FaLaptopCode className="job-icon" />,
     },
     {
+      title: "Associate Software Developer",
+      company: "Five9S Solutions",
+      period: "May 2025 – Aug 2025",
+      description:
+        "Developed responsive, dynamic UIs from Figma designs using HTML, CSS, JavaScript, React.js, and React Native, ensuring cross-platform performance and a consistent user experience.",
+      icon: <FaLaptopCode className="job-icon" />,
+    },
+    {
       title: "Junior Software Engineer",
-      company: "SEVAK DIGITAL TECHNOLOGIES",
-      period: "Feb 2024 – Aug 2025",
-      description: "Built React apps, created RESTful APIs with Node.js/Express, and tested APIs using Postman.",
+      company: "Sevak Digital Technologies Pvt. Ltd.",
+      period: "Feb 2024 – May 2025",
+      description:
+        "Built responsive UIs from Figma designs with React.js and React Native, created RESTful APIs with Node.js/Express, and tested APIs using Postman.",
       icon: <FaLaptopCode className="job-icon" />,
     },
     {

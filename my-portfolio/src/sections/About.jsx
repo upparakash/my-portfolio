@@ -9,6 +9,7 @@ import {
   SiFirebase,
   SiGraphql,
   SiPostman,
+  SiFigma,
 } from "react-icons/si";
 
 // Import AWS EC2 icon from aws-react-icons
@@ -26,23 +27,32 @@ export default function About() {
     { icon: <FaDatabase className="float-icon db" />, name: "MySQL" },
     { icon: <SiFirebase className="float-icon firebase" />, name: "Firebase" },
     { icon: <SiGraphql className="float-icon graphql" />, name: "GraphQL" },
+    { icon: <SiFigma className="float-icon figma" />, name: "Figma" },
     { icon: <SiPostman className="float-icon postman" />, name: "Postman" },
     { icon: <FaGithub className="float-icon github" />, name: "GitHub" },
-    { icon: <ArchitectureServiceAmazonEC2 className="float-icon aws" size={32} />, name: "AWS EC2" },
+    { icon: <ArchitectureServiceAmazonEC2 className="float-icon aws" size={32} />, name: "AWS" },
+    // Extra icons repeated at new spots to make the background feel fuller
+    { icon: <FaReact className="float-icon react" style={{ top: "5%", left: "55%", animationDuration: "20s" }} />, name: "React" },
+    { icon: <SiJavascript className="float-icon js" style={{ top: "45%", left: "5%", animationDuration: "26s" }} />, name: "JavaScript" },
+    { icon: <FaNodeJs className="float-icon node" style={{ top: "25%", left: "58%", animationDuration: "24s" }} />, name: "Node.js" },
+    { icon: <SiFirebase className="float-icon firebase" style={{ top: "85%", left: "10%", animationDuration: "34s" }} />, name: "Firebase" },
+    { icon: <SiPostman className="float-icon postman" style={{ top: "35%", left: "92%", animationDuration: "23s" }} />, name: "Postman" },
+    { icon: <FaGithub className="float-icon github" style={{ top: "68%", left: "62%", animationDuration: "28s" }} />, name: "GitHub" },
   ];
 
   // Array of skills for the list
   const skillsList = [
-    { icon: <FaReact className="icon react" />, label: "React.js / React Native / React Vite" },
+    { icon: <FaReact className="icon react" />, label: "React.js / React Native (CLI & Expo) / React Vite" },
     { icon: <SiJavascript className="icon js" />, label: "JavaScript / HTML5 / CSS3" },
     { icon: <SiRedux className="icon redux" />, label: "Redux / Context API" },
     { icon: <FaNodeJs className="icon node" />, label: "Node.js / Express.js" },
     { icon: <FaDatabase className="icon db" />, label: "MySQL" },
+    { icon: <SiFigma className="icon figma" />, label: "Figma to Code (Pixel-perfect UI)" },
     { icon: <SiFirebase className="icon firebase" />, label: "Firebase" },
     { icon: <SiGraphql className="icon graphql" />, label: "RESTful APIs / GraphQL" },
     { icon: <SiPostman className="icon postman" />, label: "Postman" },
-    { icon: <FaGithub className="icon github" />, label: "GitHub" },
-    { icon: <ArchitectureServiceAmazonEC2 className="icon aws" size={24} />, label: "AWS EC2 / Cloud Deployment" },
+    { icon: <FaGithub className="icon github" />, label: "Git / GitHub" },
+    { icon: <ArchitectureServiceAmazonEC2 className="icon aws" size={24} />, label: "AWS (S3, EC2, RDS, CloudFront, IAM)" },
   ];
 
   return (
@@ -57,30 +67,31 @@ export default function About() {
       {/* Main Content */}
       <h2>About Me</h2>
       <p>
-        Dedicated <b>Associate Software Engineer</b> with <b>2+ years</b> of hands-on experience in
-        developing responsive web applications using <b>HTML, CSS, JavaScript, React.js, and React Vite</b>.
-        Proficient in state management with <b>Redux</b> and <b>Context API</b>, with strong attention
-        to <b>performance optimization, UI/UX design principles</b>, and <b>debugging scalable applications</b>.
-        Experienced in building modern user interfaces and integrating both <b>RESTful APIs</b>
-        and <b>GraphQL</b> for dynamic data handling.
+        Full Stack & Mobile Developer with <b>3+ years</b> of experience building
+        high-quality applications for both web and mobile platforms, with strong expertise in{" "}
+        <b>React Native (CLI & Expo)</b> for Android and iOS. Skilled in creating fast,
+        user-friendly mobile interfaces, integrating APIs, handling navigation flows, generating
+        APK builds, and publishing apps on the <b>Google Play Store</b>.
       </p>
 
       <p>
-        Skilled in <b>cross-platform mobile application development</b> for <b>iOS</b> and <b>Android</b> using
-        React Native and Android Studio. Proficient with <b>React Navigation</b>, mobile UI/UX design,
-        generating <b>APK files</b>, building iOS apps, and publishing applications on the Google Play Store.
+        Experienced in developing modern, responsive web applications using{" "}
+        <b>React.js, JavaScript, HTML, CSS, and React Vite</b>, supported by solid state
+        management skills with <b>Redux</b> and <b>Context API</b>. Adept at converting{" "}
+        <b>Figma designs</b> into clean, pixel-perfect UI.
       </p>
 
       <p>
-        On the backend, experienced in <b>API development</b> using <b>JavaScript, Node.js, and Express.js</b>,
-        integrating with <b>Firebase</b>, and handling client–server communication with <b>Postman</b>.
-        Knowledgeable in <b>relational databases (MySQL)</b> and skilled in database design and management.
+        Backend experience includes building and integrating <b>REST APIs</b> using{" "}
+        <b>Node.js</b> and <b>Express.js</b>, and working with <b>MySQL</b> databases. Familiar
+        with <b>AWS services (S3, EC2, RDS, CloudFront, IAM)</b> for deployment, file storage,
+        database hosting, and secure access control.
       </p>
 
       <p>
-        Proficient in <b>Visual Studio Code</b> and version control with <b>GitHub</b>.
-        Passionate about creating <b>high-quality, user-friendly solutions</b>
-        and continuously enhancing expertise across <b>web, mobile, and backend development</b>.
+        Proficient in version control with <b>Git/GitHub</b> and tools like <b>VS Code</b> and{" "}
+        <b>Postman</b>. Known for delivering clean, scalable code and focusing on{" "}
+        <b>mobile-first development</b> and excellent user experience.
       </p>
 
       <div className="grid-2">
@@ -98,8 +109,8 @@ export default function About() {
         <div>
           <h4>Education</h4>
           <ul className="list">
-            <li><b>B.Tech in Computer Science & Engineering</b> – JNTU, Hyderabad (2015–2019)</li>
-            <li><b>Full Stack Developer Course</b> – Rotary (2023)</li>
+            <li><b>B.Tech in Computer Science & Engineering</b> – St. Mary's Engineering College, JNTU, Hyderabad (2015–2019)</li>
+            <li><b>Full Stack Developer Course</b> – Rotary, Hyderabad (2022)</li>
           </ul>
 
           <h4>Strengths</h4>

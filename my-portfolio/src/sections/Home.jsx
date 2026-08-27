@@ -8,6 +8,9 @@ import {
   FaMobileAlt,
   FaLaptopCode,
   FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaCode,
 } from "react-icons/fa"; 
 import { ReactTyped } from "react-typed";
 
@@ -19,10 +22,14 @@ export default function Home() {
 
       {/* Floating dev icons */}
       <div className="floating-icons">
-        <FaReact className="bubble bubble1" />
-        <FaMobileAlt className="bubble bubble2" />
-        <FaLaptopCode className="bubble bubble3" />
-        <FaWhatsapp className="bubble bubble4" />
+        <FaReact className="bubble" style={{ left: "10%", fontSize: "50px", color: "#61dafb", animationDuration: "14s", animationDelay: "0s" }} />
+        <FaMobileAlt className="bubble" style={{ left: "24%", fontSize: "36px", color: "#ff9800", animationDuration: "11s", animationDelay: "1.5s" }} />
+        <FaLaptopCode className="bubble" style={{ left: "38%", fontSize: "28px", color: "#4caf50", animationDuration: "9s", animationDelay: "3s" }} />
+        <FaWhatsapp className="bubble" style={{ left: "52%", fontSize: "42px", color: "#25d366", animationDuration: "13s", animationDelay: "0.8s" }} />
+        <FaNodeJs className="bubble" style={{ left: "66%", fontSize: "34px", color: "#3c873a", animationDuration: "12s", animationDelay: "2.4s" }} />
+        <FaGithub className="bubble" style={{ left: "78%", fontSize: "36px", color: "#e6edf3", animationDuration: "15s", animationDelay: "4s" }} />
+        <FaDatabase className="bubble" style={{ left: "88%", fontSize: "30px", color: "#00758f", animationDuration: "10s", animationDelay: "5.5s" }} />
+        <FaCode className="bubble" style={{ left: "4%", fontSize: "38px", color: "#6cf0c2", animationDuration: "16s", animationDelay: "6.5s" }} />
       </div>
 
       {/* Left - Text */}
@@ -35,8 +42,8 @@ export default function Home() {
         <h3 className="typing-text">
           <ReactTyped
             strings={[
-              "Associate Software Engineer",
-              "Full-stack Developer",
+              "Full Stack Developer",
+              "React Native Developer",
               "Web App Developer",
               "Mobile App Developer",
             ]}

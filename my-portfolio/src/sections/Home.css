@@ -156,35 +156,8 @@
   animation: floatRandom linear infinite;
 }
 
-/* Different sizes & speeds */
-.bubble1 {
-  font-size: 55px;   /* Large */
-  left: 15%;
-  color: #61dafb;    /* React */
-  animation-duration: 14s;
-  animation-delay: 0s;
-}
-.bubble2 {
-  font-size: 40px;   /* Medium */
-  left: 35%;
-  color: #ff9800;    /* Mobile */
-  animation-duration: 11s;
-  animation-delay: 2s;
-}
-.bubble3 {
-  font-size: 30px;   /* Small */
-  left: 55%;
-  color: #4caf50;    /* Web */
-  animation-duration: 9s;
-  animation-delay: 4s;
-}
-.bubble4 {
-  font-size: 45px;   /* Medium-Large */
-  left: 75%;
-  color: #25d366;    /* WhatsApp */
-  animation-duration: 13s;
-  animation-delay: 6s;
-}
+/* Individual bubble size, position, color, and timing are now set
+   inline per icon in Home.jsx so we can vary the count freely. */
 
 /* Floating random zig-zag */
 @keyframes floatRandom {

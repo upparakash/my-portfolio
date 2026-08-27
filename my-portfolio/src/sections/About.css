@@ -28,6 +28,7 @@
 .float-icon.postman { top: 55%; left: 60%; animation-duration: 27s; }
 .float-icon.github { top: 90%; left: 30%; animation-duration: 33s; }
 .float-icon.aws { top: 50%; left: 10%; animation-duration: 31s; } /* AWS EC2 added */
+.float-icon.figma { top: 65%; left: 45%; animation-duration: 24s; }
 
 /* Floating animation */
 @keyframes floatAnim {
@@ -61,3 +62,4 @@
 .icon.postman, .float-icon.postman { color: #ff6c37; text-shadow: 0 0 8px #ff6c37; }
 .icon.github, .float-icon.github { color: #ffffff; text-shadow: 0 0 8px #ffffff; }
 .icon.aws, .float-icon.aws { color: #ff9900; text-shadow: 0 0 8px #ff9900; } /* AWS EC2 color */
+.icon.figma, .float-icon.figma { color: #a259ff; text-shadow: 0 0 8px #a259ff; }
