@@ -107,3 +107,10 @@ textarea:focus {
 .success {
   color: #78f0b4;
 }
+
+/* Contact icons: each one moves in a way that fits it */
+.contact li:nth-child(1) .contact-icon { animation: icon-ring 2.5s ease-in-out infinite; }
+.contact li:nth-child(2) .contact-icon { animation: icon-bob 2.2s ease-in-out infinite; }
+.contact li:nth-child(3) .contact-icon { animation: icon-swing 2.8s ease-in-out infinite; }
+.contact li:nth-child(4) .contact-icon { animation: icon-bob 1.6s ease-in-out infinite; }
+.contact li:hover .contact-icon { animation: icon-pulse .6s ease-in-out infinite; }

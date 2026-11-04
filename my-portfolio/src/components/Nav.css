@@ -104,3 +104,8 @@
 .resume-btn .icon {
   font-size: 1rem;
 }
+
+/* Download arrow keeps nudging downward */
+.resume-btn .icon {
+  animation: icon-drop 1.4s ease-in-out infinite;
+}

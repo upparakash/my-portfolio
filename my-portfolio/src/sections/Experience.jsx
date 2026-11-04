@@ -1,8 +1,25 @@
 import "./Experience.css";
-import { FaLaptopCode, FaUserTie, FaHeadset, FaFileAlt } from "react-icons/fa";
+import { FaLaptopCode, FaHeadset, FaFileAlt, FaExternalLinkAlt } from "react-icons/fa";
+import { useStaggerReveal } from "../hooks/ScrollReveal";
 
 export default function Experience() {
+  const timelineRef = useStaggerReveal();
+
   const jobs = [
+    {
+      title: "Full Stack Developer",
+      company: "Fedigma Forge Pvt. Ltd.",
+      companyLink: "https://fedigmaforge.com/",
+      period: "Apr 2026 – Present",
+      description:
+        "Building digital products for the education sector — websites, mobile apps, and ERP systems for schools, colleges, and coaching institutes. Worked on EdTrack Smart (multi-branch institute ERP covering admissions, attendance, fees, exams, and parent communication) across web and its Android app, and delivered client websites including Advance Forte, EduMerit Institute, IBS Bank Career, and the FoldX e-commerce store.",
+      extraLinks: [
+        { label: "website", link: "https://fedigmaforge.com/" },
+        { label: "work portfolio", link: "https://fedigmaforge.com/work" },
+        { label: "EdTrack Smart app", link: "https://play.google.com/store/apps/details?id=com.edtracksmart&pcampaignid=web_share" },
+      ],
+      icon: <FaLaptopCode className="job-icon" />,
+    },
     {
       title: "Full Stack Developer",
       company: "Aspire Tekhub Solutions",
@@ -51,38 +68,43 @@ export default function Experience() {
   return (
     <section className="experience">
       <h2>Professional Experience</h2>
-      <div className="timeline">
-        {jobs.map((job, index) => (
-          <div className="job" key={index}>
-            <div className="job-header">
-              {job.icon}
-              <h3>
-                {job.title} –{" "}
-                {job.companyLink ? (
-                  <a href={job.companyLink} target="_blank" rel="noopener noreferrer">
-                    {job.company}
-                  </a>
-                ) : (
-                  job.company
-                )}
-              </h3>
-            </div>
-            <span>{job.period}</span>
-            <p>
-              {job.description}
-              {job.extraLinks &&
-                job.extraLinks.map((link, i) => (
-                  <span key={i}>
-                    <br />
-                    Check the{" "}
-                    <a href={link.link} target="_blank" rel="noopener noreferrer">
-                      {link.label}
+      <div className="timeline reveal" ref={timelineRef}>
+        {jobs.map((job, index) => {
+          const current = job.period.includes("Present");
+          return (
+            <div
+              className={`job reveal${current ? " job--current" : ""}`}
+              style={{ "--i": index }}
+              key={index}
+            >
+              <div className="job-header">
+                <span className="job-icon-wrap">{job.icon}</span>
+                <div className="job-heading">
+                  <h3>{job.title}</h3>
+                  {job.companyLink ? (
+                    <a className="job-company" href={job.companyLink} target="_blank" rel="noopener noreferrer">
+                      {job.company}
                     </a>
-                  </span>
-                ))}
-            </p>
-          </div>
-        ))}
+                  ) : (
+                    <span className="job-company">{job.company}</span>
+                  )}
+                </div>
+                {current && <span className="job-badge">Current</span>}
+              </div>
+              <span className="job-period">{job.period}</span>
+              <p>{job.description}</p>
+              {job.extraLinks && (
+                <div className="job-links">
+                  {job.extraLinks.map((link, i) => (
+                    <a key={i} href={link.link} target="_blank" rel="noopener noreferrer">
+                      {link.label} <FaExternalLinkAlt />
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

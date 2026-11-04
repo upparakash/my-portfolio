@@ -63,3 +63,20 @@
 .icon.github, .float-icon.github { color: #ffffff; text-shadow: 0 0 8px #ffffff; }
 .icon.aws, .float-icon.aws { color: #ff9900; text-shadow: 0 0 8px #ff9900; } /* AWS EC2 color */
 .icon.figma, .float-icon.figma { color: #a259ff; text-shadow: 0 0 8px #a259ff; }
+
+/* Skill icons: gentle staggered float, React keeps spinning */
+.skills-list .icon {
+  flex-shrink: 0;
+  animation: icon-float-tilt 3.2s ease-in-out infinite;
+}
+.skills-list li:nth-child(2n) .icon { animation-delay: .4s; }
+.skills-list li:nth-child(3n) .icon { animation-delay: .8s; }
+.skills-list li:nth-child(5n) .icon { animation-delay: 1.2s; }
+
+.skills-list .icon.react {
+  animation: icon-spin 6s linear infinite;
+}
+
+.skills-list li:hover .icon {
+  animation: icon-pulse .6s ease-in-out infinite;
+}

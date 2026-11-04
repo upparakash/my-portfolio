@@ -173,3 +173,16 @@
     opacity: 0;
   }
 }
+
+/* Social icons ripple up and down one after another */
+.social-icons svg {
+  display: block;
+  animation: icon-bob 2.4s ease-in-out infinite;
+}
+.social-icons a:nth-child(2) svg { animation-delay: .2s; }
+.social-icons a:nth-child(3) svg { animation-delay: .4s; }
+.social-icons a:nth-child(4) svg { animation-delay: .6s; }
+
+.social-icons a:hover svg {
+  animation: icon-swing .5s ease-in-out infinite;
+}

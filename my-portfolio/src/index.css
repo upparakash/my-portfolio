@@ -38,3 +38,58 @@ p { line-height: 1.65; }
   box-shadow: none;
 }
 .btn:active { transform: translateY(1px); }
+
+/* ---------- Shared icon motion ---------- */
+@keyframes icon-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+@keyframes icon-float-tilt {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25%      { transform: translateY(-4px) rotate(-6deg); }
+  75%      { transform: translateY(-2px) rotate(6deg); }
+}
+
+@keyframes icon-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes icon-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.18); }
+}
+
+@keyframes icon-ring {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30%, 50% { transform: rotate(-14deg); }
+  20%, 40%      { transform: rotate(14deg); }
+}
+
+@keyframes icon-drop {
+  0%, 100% { transform: translateY(-2px); }
+  50%      { transform: translateY(3px); }
+}
+
+@keyframes icon-nudge {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(2px, -2px); }
+}
+
+@keyframes icon-swing {
+  0%, 100% { transform: rotate(-8deg); }
+  50%      { transform: rotate(8deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-icons svg,
+  .skills-list .icon,
+  .contact-icon,
+  .resume-btn .icon,
+  .job-icon,
+  .card-icon svg,
+  .card-link svg,
+  .job-links a svg {
+    animation: none !important;
+  }
+}

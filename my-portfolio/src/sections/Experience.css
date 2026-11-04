@@ -17,6 +17,13 @@
   padding-left: 2.5rem;
 }
 
+/* The container itself only drives the line-draw; keep it visible */
+.timeline.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Timeline line draws downward when the section scrolls in */
 .timeline::before {
   content: "";
   position: absolute;
@@ -24,110 +31,253 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: var(--accent);
+  background: linear-gradient(to bottom, var(--accent), rgba(108, 240, 194, 0.08));
   border-radius: 2px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1.6s cubic-bezier(.22, 1, .36, 1);
+}
+
+.timeline.reveal-visible::before {
+  transform: scaleY(1);
+}
+
+/* Each card slides in from the right, staggered by --i */
+.job.reveal {
+  transform: translateX(40px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.22, 1, .36, 1), border-color .3s ease, box-shadow .3s ease;
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.job.reveal-visible {
+  transform: translateX(0);
 }
 
 .job {
   position: relative;
-  padding: 1rem 1.25rem 1rem 3rem;
+  padding: 1.1rem 1.25rem 1.1rem 1.5rem;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #0e151f;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #0f1823, #0c121a);
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: visible;
 }
 
-.job:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+.job.reveal-visible:hover {
+  transform: translateY(-4px);
+  transition-delay: 0s;
+  border-color: rgba(108, 240, 194, 0.45);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55), 0 0 24px rgba(108, 240, 194, 0.12);
 }
 
-/* Timeline circle */
+/* Timeline dot */
 .job::before {
   content: "";
   position: absolute;
-  left: -1.1rem;
-  top: 1.3rem;
+  left: calc(-1.5rem - 6.5px);
+  top: 1.6rem;
   width: 14px;
   height: 14px;
-  background: var(--accent);
-  border: 2px solid var(--border);
+  background: var(--bg);
+  border: 3px solid var(--accent);
   border-radius: 50%;
+  box-sizing: border-box;
+  transition: background .3s ease, box-shadow .3s ease;
 }
 
-/* Job header with icon */
+.job:hover::before {
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.job--current::before {
+  background: var(--accent);
+  animation: pulse-dot 2s ease-out infinite;
+}
+
+.job--current {
+  border-color: rgba(108, 240, 194, 0.35);
+}
+
+@keyframes pulse-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(108, 240, 194, 0.6); }
+  70%  { box-shadow: 0 0 0 12px rgba(108, 240, 194, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(108, 240, 194, 0); }
+}
+
+/* Header */
 .job-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  gap: 0.85rem;
+  margin-bottom: 0.4rem;
 }
 
-.job-header h3 {
-  margin: 0;
-  font-size: 1.1rem;
+.job-icon-wrap {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(108, 240, 194, 0.08);
+  border: 1px solid rgba(108, 240, 194, 0.2);
+  transition: transform .4s cubic-bezier(.34, 1.56, .64, 1), background .3s ease;
+}
+
+.job:hover .job-icon-wrap {
+  transform: rotate(-8deg) scale(1.08);
+  background: rgba(108, 240, 194, 0.16);
 }
 
 .job-icon {
   color: var(--accent);
-  font-size: 1.5rem;
-  flex-shrink: 0;
+  font-size: 1.35rem;
 }
 
-/* Company link styling */
-.job-header a {
+.job-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.job-heading h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.job-company {
   color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .3s ease;
 }
 
-.job-header a:hover {
-  text-decoration: underline;
+a.job-company:hover {
+  background-size: 100% 1px;
 }
 
-.job span {
-  display: block;
-  font-size: 0.9rem;
+.job-badge {
+  flex-shrink: 0;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #0b0f14;
+  background: linear-gradient(90deg, var(--accent), #7cc8ff, var(--accent));
+  background-size: 200% 100%;
+  animation: badge-shine 3s linear infinite;
+}
+
+@keyframes badge-shine {
+  to { background-position: -200% 0; }
+}
+
+.job-period {
+  display: inline-block;
+  font-size: 0.85rem;
   color: var(--muted);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
 }
 
 .job p {
   margin: 0;
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-.job p a {
+.job-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.job-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+  text-transform: capitalize;
   color: var(--accent);
-  text-decoration: underline;
+  text-decoration: none;
+  border: 1px solid rgba(108, 240, 194, 0.35);
+  border-radius: 999px;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
 }
 
-.job p a:hover {
-  text-decoration: none;
+.job-links a svg {
+  font-size: 0.7rem;
+}
+
+.job-links a:hover {
+  background: var(--accent);
+  color: #0b0f14;
+  transform: translateY(-2px);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .timeline {
-    padding-left: 1rem;
+    padding-left: 1.5rem;
   }
 
   .timeline::before {
-    left: 0.25rem;
+    left: 0.35rem;
   }
 
   .job {
-    padding: 0.9rem 1rem 0.9rem 2.5rem;
+    padding: 0.95rem 1rem;
   }
 
   .job::before {
-    left: -1rem;
+    left: calc(-1.15rem - 5.5px);
     width: 12px;
     height: 12px;
   }
 
-  .job-icon {
-    font-size: 1.25rem;
+  .job-icon-wrap {
+    width: 38px;
+    height: 38px;
   }
+
+  .job-badge {
+    font-size: 0.68rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline::before,
+  .job.reveal {
+    transition: none;
+    transform: none;
+  }
+  .job--current::before,
+  .job-badge {
+    animation: none;
+  }
+}
+
+/* Job icons float, staggered down the timeline */
+.job-icon {
+  animation: icon-float-tilt 3.4s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * .35s);
+}
+
+.job--current .job-icon {
+  animation: icon-pulse 2s ease-in-out infinite;
+}
+
+.job-links a svg {
+  animation: icon-nudge 1.8s ease-in-out infinite;
 }
